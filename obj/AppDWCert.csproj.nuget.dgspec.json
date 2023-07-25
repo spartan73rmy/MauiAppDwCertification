@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ICUE 002\\source\\repos\\AppDWCert\\AppDWCert.csproj": {}
+    "C:\\Users\\ICUE 002\\Documents\\GitHub\\MauiAppDwCertification\\AppDWCert.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ICUE 002\\source\\repos\\AppDWCert\\AppDWCert.csproj": {
+    "C:\\Users\\ICUE 002\\Documents\\GitHub\\MauiAppDwCertification\\AppDWCert.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ICUE 002\\source\\repos\\AppDWCert\\AppDWCert.csproj",
+        "projectUniqueName": "C:\\Users\\ICUE 002\\Documents\\GitHub\\MauiAppDwCertification\\AppDWCert.csproj",
         "projectName": "AppDWCert",
-        "projectPath": "C:\\Users\\ICUE 002\\source\\repos\\AppDWCert\\AppDWCert.csproj",
+        "projectPath": "C:\\Users\\ICUE 002\\Documents\\GitHub\\MauiAppDwCertification\\AppDWCert.csproj",
         "packagesPath": "C:\\Users\\ICUE 002\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ICUE 002\\source\\repos\\AppDWCert\\obj\\",
+        "outputPath": "C:\\Users\\ICUE 002\\Documents\\GitHub\\MauiAppDwCertification\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [

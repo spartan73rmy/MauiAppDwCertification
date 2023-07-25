@@ -12,34 +12,40 @@ build_property.EnableSingleFileAnalyzer = true
 build_property.EnableTrimAnalyzer = false
 build_property.IncludeAllContentForSelfExtract = 
 build_property.RootNamespace = AppDWCert
-build_property.ProjectDir = C:\Users\ICUE 002\source\repos\AppDWCert\
+build_property.ProjectDir = C:\Users\ICUE 002\Documents\GitHub\MauiAppDwCertification\
 
-[C:/Users/ICUE 002/source/repos/AppDWCert/App.xaml]
+[C:/Users/ICUE 002/Documents/GitHub/MauiAppDwCertification/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = AppDWCert.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[C:/Users/ICUE 002/source/repos/AppDWCert/AppShell.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = AppDWCert.AppShell.xaml
-build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
-build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
-
-[C:/Users/ICUE 002/source/repos/AppDWCert/MainPage.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = AppDWCert.MainPage.xaml
-build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
-build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
-
-[C:/Users/ICUE 002/source/repos/AppDWCert/Resources/Styles/Colors.xaml]
+[C:/Users/ICUE 002/Documents/GitHub/MauiAppDwCertification/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = AppDWCert.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
 
-[C:/Users/ICUE 002/source/repos/AppDWCert/Resources/Styles/Styles.xaml]
+[C:/Users/ICUE 002/Documents/GitHub/MauiAppDwCertification/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = AppDWCert.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[C:/Users/ICUE 002/Documents/GitHub/MauiAppDwCertification/Views/AddCar.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppDWCert.Views.AddCar.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\AddCar.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\AddCar.xaml
+
+[C:/Users/ICUE 002/Documents/GitHub/MauiAppDwCertification/Views/CarsForSale.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppDWCert.Views.CarsForSale.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\CarsForSale.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\CarsForSale.xaml
+
+[C:/Users/ICUE 002/Documents/GitHub/MauiAppDwCertification/Views/FavoriteCars.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppDWCert.Views.FavoriteCars.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\FavoriteCars.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\FavoriteCars.xaml

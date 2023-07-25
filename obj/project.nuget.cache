@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ECG7cA57CwRGscawni3TAtcGJx+IW77l96G3DVcDCqDeRjxYIZCZqawerPgw3sV75PpEuuUOX8D/fATTpDWEdw==",
+  "dgSpecHash": "vykWOAOowm7QS8h2wY6dulPELlBjBf4XoNYibJVqe+ggUBs1INb0mbjFlOsqH35l+hGPka8pfEKNQwwdHZiBhQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ICUE 002\\source\\repos\\AppDWCert\\AppDWCert.csproj",
+  "projectFilePath": "C:\\Users\\ICUE 002\\Documents\\GitHub\\MauiAppDwCertification\\AppDWCert.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ICUE 002\\.nuget\\packages\\googlegson\\2.9.1.1\\googlegson.2.9.1.1.nupkg.sha512",
     "C:\\Users\\ICUE 002\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",
