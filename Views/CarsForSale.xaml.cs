@@ -25,4 +25,9 @@ public partial class CarsForSale : ContentPage
     {
         await Navigation.PushAsync(new AddCar());
     }
+
+    private void Button_Clicked(object sender, EventArgs e)
+    {
+
+    }
 }

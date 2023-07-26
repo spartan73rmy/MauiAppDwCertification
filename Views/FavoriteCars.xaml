@@ -1,24 +1,34 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:CarModel="clr-namespace:AppDWCert.Models"
              x:Class="AppDWCert.Views.FavoriteCars"
              Title="FavoriteCars">
-    <VerticalStackLayout>
-        <Label 
-            Text="Coches Favoritos"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <Button Text="HOLA"></Button>
-        <Button Text="HOLA"></Button>
-        <HorizontalStackLayout>
-            <Button Text="HOLA"></Button>
-            <Button Text="HOLA"></Button>
-            <VerticalStackLayout>
-                <Button Text="HOLA"></Button>
-                <Button Text="HOLA"></Button>
-            </VerticalStackLayout>
-            <Button Text="HOLA"></Button>
-            <Button Text="HOLA"></Button>
-        </HorizontalStackLayout>
-    </VerticalStackLayout>
+    <ListView x:Name="CarList" RowHeight="150">
+        <ListView.ItemTemplate>
+            <DataTemplate x:DataType="CarModel:Car">
+                <ViewCell>
+                    <Border>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="3*"></ColumnDefinition>
+                                <ColumnDefinition Width=".5*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="{Binding PhotoUrl}"></Image>
+                            <VerticalStackLayout Grid.Column="1">
+                                <Label Text="{Binding Brand}"></Label>
+                                <Label Text="{Binding Model}"></Label>
+                                <Label Text="{Binding Year}"></Label>
+                                <Label Text="{Binding Price}"></Label>
+                                <Label Text="{Binding Description}"></Label>
+                            </VerticalStackLayout>
+
+                            <Button Text="Favorito" Grid.Column="2"></Button>
+                        </Grid>
+                    </Border>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 </ContentPage>
