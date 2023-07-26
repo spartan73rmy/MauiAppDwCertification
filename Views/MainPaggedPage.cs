@@ -12,7 +12,7 @@ namespace AppDWCert.Views
         {
             Children.Add(new FavoriteCars());
             Children.Add(new CarsForSale());
-            Children.Add(new AddCar());
+            //Children.Add(new AddCar());
         }
     }
 }

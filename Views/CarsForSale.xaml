@@ -2,29 +2,38 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppDWCert.Views.CarsForSale"
-             Title="CarsForSale">
-    <ScrollView>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="2*"></RowDefinition>
-                <RowDefinition Height="2*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="2*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Label Grid.Row="0" Grid.Column="0" BackgroundColor="Blue" Text="HOLA ESTO ES UN TEXTO"></Label>
-            <Label Grid.Row="0" Grid.Column="1" BackgroundColor="ForestGreen" Text="HOLA ESTO ES UN TEXTO"></Label>
-            <Label Grid.Row="1" Grid.Column="0" BackgroundColor="Coral" Text="HOLA ESTO ES UN TEXTO"></Label>
-            <Label Grid.Row="1" Grid.Column="1" BackgroundColor="Wheat" Text="HOLA ESTO ES UN TEXTO"></Label>
+             xmlns:CarModel="clr-namespace:AppDWCert.Models"
+             Title="Carros en Venta">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Agregar" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
 
-            <Image Grid.Row="0" Grid.Column="0" Source="dotnet_bot.png" />
-            <Image Grid.Row="1" Grid.Column="1" Source="dotnet_bot.png" />
+    <ListView x:Name="CarList" RowHeight="150">
+        <ListView.ItemTemplate>
+            <DataTemplate x:DataType="CarModel:Car">
+                <ViewCell>
+                    <Border>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="3*"></ColumnDefinition>
+                                <ColumnDefinition Width=".5*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="{Binding PhotoUrl}"></Image>
+                            <VerticalStackLayout Grid.Column="1">
+                                <Label Text="{Binding Brand}"></Label>
+                                <Label Text="{Binding Model}"></Label>
+                                <Label Text="{Binding Year}"></Label>
+                                <Label Text="{Binding Price}"></Label>
+                                <Label Text="{Binding Description}"></Label>
+                            </VerticalStackLayout>
 
-            <Image Grid.Row="2" Grid.Column="0" Source="dotnet_bot.png" />
-            <Image Grid.Row="2" Grid.Column="1" Source="dotnet_bot.png" />
-        </Grid>
-    </ScrollView>
+                            <Button Text="Favorito" Grid.Column="2"></Button>
+                        </Grid>
+                    </Border>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
 </ContentPage>

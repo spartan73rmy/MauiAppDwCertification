@@ -2,6 +2,18 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppDWCert.Views.AddCar"
-             Title="AddCar">
-    
+             Title="Carro Nuevo">
+    <VerticalStackLayout>
+        <Frame CornerRadius="100" HeightRequest="200" WidthRequest="200">
+            <Image x:Name="ImgCar" Source="dotnet_bot"/>
+        </Frame>
+
+        <Entry x:Name="EntryModelo" Placeholder="Modelo"></Entry>
+        <Entry x:Name="EntryMarca" Placeholder="Marca"></Entry>
+        <Entry x:Name="EntryYear" Placeholder="Año" Keyboard="Numeric"></Entry>
+        <Entry x:Name="EntryDescripcion" Placeholder="Descripcion"></Entry>
+        <Entry x:Name="EntryPrecio" Placeholder="Precio"></Entry>
+
+        <Button x:Name="btnAceptar" Text="Aceptar" Clicked="btnAceptar_Clicked"></Button>
+    </VerticalStackLayout>
 </ContentPage>
