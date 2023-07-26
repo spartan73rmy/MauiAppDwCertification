@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:CarModel="clr-namespace:AppDWCert.Models"
              x:Class="AppDWCert.Views.FavoriteCars"
-             Title="FavoriteCars">
+             Title="Favoritos">
     <ListView x:Name="CarList" RowHeight="150">
         <ListView.ItemTemplate>
             <DataTemplate x:DataType="CarModel:Car">
