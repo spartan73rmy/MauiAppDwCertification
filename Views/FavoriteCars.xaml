@@ -8,25 +8,36 @@
         <ListView.ItemTemplate>
             <DataTemplate x:DataType="CarModel:Car">
                 <ViewCell>
-                    <Border>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="3*"></ColumnDefinition>
-                                <ColumnDefinition Width=".5*"></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-                            <Image Source="{Binding PhotoUrl}"></Image>
-                            <VerticalStackLayout Grid.Column="1">
-                                <Label Text="{Binding Brand}"></Label>
-                                <Label Text="{Binding Model}"></Label>
-                                <Label Text="{Binding Year}"></Label>
-                                <Label Text="{Binding Price}"></Label>
-                                <Label Text="{Binding Description}"></Label>
-                            </VerticalStackLayout>
+                    <SwipeView>
+                        <SwipeView.RightItems SwipeBehaviorOnInvoked="btnSwipeItem">
+                            <SwipeItems Mode="Execute">
+                                <SwipeItem Text="Borrar"
+                                       x:Name="btnBorrar"
+                                       Invoked="btnBorrar_Invoked"
+                                       IconImageSource="dotnet_bot"
+                                       BackgroundColor="DarkRed"/>
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+                        <Border>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                                    <ColumnDefinition Width=".5*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="{Binding PhotoUrl}"></Image>
+                                <VerticalStackLayout Grid.Column="1">
+                                    <Label Text="{Binding Brand}"></Label>
+                                    <Label Text="{Binding Model}"></Label>
+                                    <Label Text="{Binding Year}"></Label>
+                                    <Label Text="{Binding Price}"></Label>
+                                    <Label Text="{Binding Description}"></Label>
+                                </VerticalStackLayout>
 
-                            <Button Text="Favorito" Grid.Column="2"></Button>
-                        </Grid>
-                    </Border>
+                                <Button Text="Favorito" Grid.Column="2"></Button>
+                            </Grid>
+                        </Border>
+                    </SwipeView>
                 </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>

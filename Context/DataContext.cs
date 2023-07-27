@@ -39,5 +39,14 @@ namespace AppDWCert.Context
             return await connection.InsertAsync(car) == 1;
         }
 
+        public async ValueTask<bool> RemoveFavoriteAsync(int id)
+        {
+            await Init();
+            var car = await GetCarByIdAsync(id);
+            if (car is null)
+                return false;
+
+            return await connection.DeleteAsync(car) == 1;
+        }
     }
 }

@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;
 
 namespace AppDWCert.Views
 {
-    public class MainPaggedPage : TabbedPage
+    public class MainPaggedPage : Microsoft.Maui.Controls.TabbedPage
     {
         public MainPaggedPage()
         {
+            Children.Add(new CarsForSalePaggedPage());
             Children.Add(new FavoriteCars());
-            Children.Add(new CarsForSale());
-            //Children.Add(new AddCar());
+
+            On<Microsoft.Maui.Controls.PlatformConfiguration.Android>().SetIsSwipePagingEnabled(false);
         }
     }
 }
