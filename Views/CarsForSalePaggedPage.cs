@@ -6,10 +6,11 @@ namespace AppDWCert.Views
     {
         public CarsForSalePaggedPage()
         {
-            Title = "Carros en venta";
+            Title = "Carros en la Zona";
             Children.Add(new CarsForSale());
-            Children.Add(new AddCar());
+            Children.Add(new MapCars());
             On<Microsoft.Maui.Controls.PlatformConfiguration.Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
+            On<Microsoft.Maui.Controls.PlatformConfiguration.Android>().SetIsSwipePagingEnabled(false);
         }
     }
 }
