@@ -5,15 +5,16 @@
              Title="Carro Nuevo">
     <VerticalStackLayout>
         <Frame CornerRadius="100" HeightRequest="200" WidthRequest="200">
-            <Image x:Name="ImgCar" Source="dotnet_bot"/>
+            <Image Source="{Binding CarModel.PhotoUrl}" Aspect="AspectFill"/>
         </Frame>
 
-        <Entry x:Name="EntryModelo" Placeholder="Modelo"></Entry>
-        <Entry x:Name="EntryMarca" Placeholder="Marca"></Entry>
-        <Entry x:Name="EntryYear" Placeholder="Año" Keyboard="Numeric"></Entry>
-        <Entry x:Name="EntryDescripcion" Placeholder="Descripcion"></Entry>
-        <Entry x:Name="EntryPrecio" Placeholder="Precio"></Entry>
+        <Entry Text="{Binding CarModel.Model}" Placeholder="Modelo" ></Entry>
+        <Entry Text="{Binding CarModel.Brand}" Placeholder="Marca" ></Entry>
+        <Entry Text="{Binding CarModel.Year}" Placeholder="Año" Keyboard="Numeric" ></Entry>
+        <Entry Text="{Binding CarModel.Description}" Placeholder="Descripcion" ></Entry>
+        <Entry Text="{Binding CarModel.Price}" Placeholder="Precio"></Entry>
 
-        <Button x:Name="btnAceptar" Text="Aceptar" Clicked="btnAceptar_Clicked"></Button>
+        <Button Text="Tomar Foto" Command="{Binding TakePhotoCommand}"></Button>
+        <Button Text="Aceptar" Command="{Binding AddCarCommand}"></Button>
     </VerticalStackLayout>
 </ContentPage>
