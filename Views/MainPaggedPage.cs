@@ -6,7 +6,7 @@ namespace AppDWCert.Views
     {
         public MainPaggedPage()
         {
-            Children.Add(new CarsForSalePaggedPage());
+            Children.Add(new CarsForSale());
             Children.Add(new FavoriteCars());
 
             On<Microsoft.Maui.Controls.PlatformConfiguration.Android>().SetIsSwipePagingEnabled(false);

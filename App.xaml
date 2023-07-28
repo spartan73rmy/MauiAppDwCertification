@@ -4,6 +4,13 @@
              xmlns:local="clr-namespace:AppDWCert"
              x:Class="AppDWCert.App">
     <Application.Resources>
+        <!--<StyleShet>
+            <![CDATA[
+            ^ContenPage{
+                BackgroundColor: "";
+            }
+            ]]>
+        </StyleShet>-->
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />

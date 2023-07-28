@@ -3,16 +3,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppDWCert.Views.AddCar"
              Title="Carro Nuevo">
+    <ContentPage.Resources>
+        <!--Estilo Implicito-->
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="Wheat"></Setter>
+            <Setter Property="FontSize" Value="Large"></Setter>
+            <Setter Property="TextColor" Value="Black"></Setter>
+            <Setter Property="Margin" Value="4"></Setter>
+            <Setter Property="CornerRadius" Value="20"></Setter>
+        </Style>
+        
+        <!--Estilo Explicito-->
+        <Style x:Key="txtCar" TargetType="Entry">
+            <Setter Property="BackgroundColor" Value="AliceBlue"/>
+            <Setter Property="FontSize" Value="Small"/>
+            <Setter Property="TextColor" Value="SaddleBrown"/>
+        </Style>
+    </ContentPage.Resources>
     <VerticalStackLayout>
         <Frame CornerRadius="100" HeightRequest="200" WidthRequest="200">
             <Image Source="{Binding CarModel.PhotoUrl}" Aspect="AspectFill"/>
         </Frame>
 
-        <Entry Text="{Binding CarModel.Model}" Placeholder="Modelo" ></Entry>
-        <Entry Text="{Binding CarModel.Brand}" Placeholder="Marca" ></Entry>
-        <Entry Text="{Binding CarModel.Year}" Placeholder="Año" Keyboard="Numeric" ></Entry>
-        <Entry Text="{Binding CarModel.Description}" Placeholder="Descripcion" ></Entry>
-        <Entry Text="{Binding CarModel.Price}" Placeholder="Precio"></Entry>
+        <Entry Text="{Binding CarModel.Model}" Placeholder="Modelo" Style="{StaticResource txtCar}"></Entry>
+        <Entry Text="{Binding CarModel.Brand}" Placeholder="Marca" Style="{StaticResource txtCar}"></Entry>
+        <Entry Text="{Binding CarModel.Year}" Placeholder="Año" Keyboard="Numeric" Style="{StaticResource txtCar}"></Entry>
+        <Entry Text="{Binding CarModel.Description}" Placeholder="Descripcion" Style="{StaticResource txtCar}"></Entry>
+        <Entry Text="{Binding CarModel.Price}" Placeholder="Precio" Style="{StaticResource txtCar}"></Entry>
 
         <Button Text="Tomar Foto" Command="{Binding TakePhotoCommand}"></Button>
         <Button Text="Aceptar" Command="{Binding AddCarCommand}"></Button>

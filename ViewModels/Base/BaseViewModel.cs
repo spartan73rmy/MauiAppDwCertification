@@ -1,107 +1,81 @@
-﻿using static Microsoft.Maui.Controls.Application;
-
-namespace AppDWCert.ViewModels.Base
+﻿namespace AppDWCert.ViewModels.Base
 {
     public abstract class BaseViewModel : ObservableObject, INavigation
     {
-        protected BaseViewModel(INavigation navigation)
+        public IReadOnlyList<Page> ModalStack { get; }
+
+        public IReadOnlyList<Page> NavigationStack { get; }
+
+        public INavigation Navigation { get; set; }
+
+        public BaseViewModel(INavigation navigation)
         {
-            _navigation = navigation;
+            Navigation = navigation;
         }
 
-        private bool isBusy;
-        public bool IsBusy { get => isBusy; set => SetProperty(ref isBusy, value); }
-
-        #region Navigation
-
-        private INavigation _navigation;
-        public INavigation Navigation { get => _navigation; set => _navigation = value; }
-
-        public Page Main
-        {
-            get => Current?.MainPage;
-            set => Current.MainPage = value;
-        }
 
         public void InsertPageBefore(Page page, Page before)
         {
-            _navigation?.InsertPageBefore(page, before);
+            throw new NotImplementedException();
         }
 
         public async Task<Page> PopAsync()
         {
-            var task = _navigation?.PopAsync();
-            return task != null ? await task : await Task.FromResult(null as Page);
+            var task = Navigation?.PopAsync();
+            return task != null ? await task : null;
+
         }
 
-        public async Task<Page> PopAsync(bool animated)
+        public Task<Page> PopAsync(bool animated)
         {
-            var task = _navigation?.PopAsync(animated);
-            return task != null ? await task : await Task.FromResult(null as Page);
+            throw new NotImplementedException();
         }
 
-        public async Task<Page> PopModalAsync()
+        public Task<Page> PopModalAsync()
         {
-            var task = _navigation?.PopModalAsync();
-            return task != null ? await task : await Task.FromResult(null as Page);
+            throw new NotImplementedException();
         }
 
-        public async Task<Page> PopModalAsync(bool animated)
+        public Task<Page> PopModalAsync(bool animated)
         {
-            var task = _navigation?.PopModalAsync(animated);
-            return task != null ? await task : await Task.FromResult(null as Page);
+            throw new NotImplementedException();
         }
 
-        public async Task PopToRootAsync()
+        public Task PopToRootAsync()
         {
-            var task = _navigation?.PopToRootAsync();
-            if (task != null)
-                await task;
+            throw new NotImplementedException();
         }
 
-        public async Task PopToRootAsync(bool animated)
+        public Task PopToRootAsync(bool animated)
         {
-            var task = _navigation?.PopToRootAsync(animated);
-            if (task != null)
-                await task;
+            throw new NotImplementedException();
         }
 
         public async Task PushAsync(Page page)
         {
-            var task = _navigation?.PushAsync(page);
+            var task = Navigation?.PushAsync(page);
             if (task != null)
                 await task;
         }
 
-        public async Task PushAsync(Page page, bool animated)
+        public Task PushAsync(Page page, bool animated)
         {
-            var task = _navigation?.PushAsync(page, animated);
-            if (task != null)
-                await task;
+            throw new NotImplementedException();
         }
 
-        public async Task PushModalAsync(Page page)
+        public Task PushModalAsync(Page page)
         {
-            var task = _navigation?.PushModalAsync(page);
-            if (task != null)
-                await task;
+            throw new NotImplementedException();
         }
 
-        public async Task PushModalAsync(Page page, bool animated)
+        public Task PushModalAsync(Page page, bool animated)
         {
-            var task = _navigation?.PushModalAsync(page, animated);
-            if (task != null)
-                await task;
+            throw new NotImplementedException();
         }
 
         public void RemovePage(Page page)
         {
-            _navigation?.RemovePage(page);
+            throw new NotImplementedException();
         }
-
-        public IReadOnlyList<Page> ModalStack { get; }
-        public IReadOnlyList<Page> NavigationStack { get; }
-
-        #endregion
     }
 }

@@ -1,6 +1,8 @@
 ﻿using AppDWCert.Context;
+using AppDWCert.Messages;
 using AppDWCert.Models;
 using AppDWCert.ViewModels.Base;
+using CommunityToolkit.Mvvm.Messaging;
 using System.Windows.Input;
 
 namespace AppDWCert.ViewModels
@@ -45,7 +47,9 @@ namespace AppDWCert.ViewModels
             CarModel.PhotoUrl = "https://static.wikia.nocookie.net/disney/images/6/6f/Profile_-_Maui.jpeg/revision/latest/thumbnail/width/360/height/360?cb=20190628013307";
 
             await new RestService().Set("CarsForSalesApi", CarModel);
+
             _ = await Navigation.PopAsync(true);
+            WeakReferenceMessenger.Default.Send<RefreshCarList>();
         }
     }
 }

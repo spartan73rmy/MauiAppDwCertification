@@ -2,15 +2,22 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppDWCert.Views.CarsForSale"
-             xmlns:CarModel="clr-namespace:AppDWCert.Models"
+             xmlns:Model="clr-namespace:AppDWCert.Models"
+             x:Name="CarsForSalePage"
              Title="Carros en Venta">
+    
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Agregar" Clicked="ToolbarItem_Clicked"/>
+        <ToolbarItem Text="Agregar" Command="{Binding AddCarCommand}"/>
     </ContentPage.ToolbarItems>
 
-    <ListView x:Name="CarList" RowHeight="150">
+    <ListView x:Name="CarList" RowHeight="150" 
+              ItemsSource="{Binding CarsList}" 
+              RefreshCommand="{Binding RefreshCommand}" 
+              IsPullToRefreshEnabled="True" 
+              IsRefreshing="{Binding IsBusy}" >
+
         <ListView.ItemTemplate>
-            <DataTemplate x:DataType="CarModel:Car">
+            <DataTemplate x:DataType="Model:Car">
                 <ViewCell>
                     <Border>
                         <Grid>
@@ -20,15 +27,20 @@
                                 <ColumnDefinition Width=".5*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
                             <Image Source="{Binding PhotoUrl}"></Image>
+
                             <VerticalStackLayout Grid.Column="1">
                                 <Label Text="{Binding Brand}"></Label>
                                 <Label Text="{Binding Model}"></Label>
-                                <Label Text="{Binding Year}"></Label>
-                                <Label Text="{Binding Price}"></Label>
                                 <Label Text="{Binding Description}"></Label>
+                                <Label Text="{Binding Price}"></Label>
                             </VerticalStackLayout>
 
-                            <Button Text="Favorito" Grid.Column="2" Clicked="Button_Clicked"></Button>
+                            <Button x:Name="btnFavorite" Text="Favorito" Grid.Column="2" 
+                                    Command="{Binding Source={x:Reference CarsForSalePage}, Path=BindingContext.SetFavoriteCommand}" 
+                                    CommandParameter="{x:Reference btnFavorite}" >
+
+                            </Button>
+
                         </Grid>
                     </Border>
                 </ViewCell>
