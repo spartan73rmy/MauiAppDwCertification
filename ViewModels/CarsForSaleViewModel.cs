@@ -50,7 +50,7 @@ namespace AppDWCert.ViewModels
                 return;
 
             IsBusy = true;
-            if (obj is Button carButton)
+            if (obj is Material.Components.Maui.Button carButton)
             {
                 if (carButton.BindingContext is Car car)
                 {

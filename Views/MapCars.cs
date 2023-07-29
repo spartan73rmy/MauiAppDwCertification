@@ -16,7 +16,12 @@ namespace AppDWCert.Views
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            var location = await Geolocation.Default.GetLocationAsync();
+            Location location;
+#if !DEBUG
+            location = await Geolocation.Default.GetLocationAsync();
+#else
+            location = new Location(19.5950446, -102.4792736);
+#endif
             map = new(MapSpan.FromCenterAndRadius(location, Distance.FromKilometers(1)))
             {
                 IsShowingUser = true

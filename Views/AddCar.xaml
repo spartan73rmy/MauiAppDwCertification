@@ -1,37 +1,25 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mdc="clr-namespace:Material.Components.Maui;assembly=Material.Components.Maui"
+             xmlns:controls="clr-namespace:AppDWCert.Controls"
              x:Class="AppDWCert.Views.AddCar"
              Title="Carro Nuevo">
-    <ContentPage.Resources>
-        <!--Estilo Implicito-->
-        <Style TargetType="Button">
-            <Setter Property="BackgroundColor" Value="Wheat"></Setter>
-            <Setter Property="FontSize" Value="Large"></Setter>
-            <Setter Property="TextColor" Value="Black"></Setter>
-            <Setter Property="Margin" Value="4"></Setter>
-            <Setter Property="CornerRadius" Value="20"></Setter>
-        </Style>
-        
-        <!--Estilo Explicito-->
-        <Style x:Key="txtCar" TargetType="Entry">
-            <Setter Property="BackgroundColor" Value="AliceBlue"/>
-            <Setter Property="FontSize" Value="Small"/>
-            <Setter Property="TextColor" Value="SaddleBrown"/>
-        </Style>
-    </ContentPage.Resources>
-    <VerticalStackLayout>
-        <Frame CornerRadius="100" HeightRequest="200" WidthRequest="200">
-            <Image Source="{Binding CarModel.PhotoUrl}" Aspect="AspectFill"/>
-        </Frame>
+    <ScrollView>
+        <VerticalStackLayout Spacing="5">
+            <Frame CornerRadius="100" HeightRequest="200" WidthRequest="200">
+                <Image Source="{Binding CarModel.PhotoUrl}" Aspect="AspectFill"/>
+            </Frame>
 
-        <Entry Text="{Binding CarModel.Model}" Placeholder="Modelo" Style="{StaticResource txtCar}"></Entry>
-        <Entry Text="{Binding CarModel.Brand}" Placeholder="Marca" Style="{StaticResource txtCar}"></Entry>
-        <Entry Text="{Binding CarModel.Year}" Placeholder="Año" Keyboard="Numeric" Style="{StaticResource txtCar}"></Entry>
-        <Entry Text="{Binding CarModel.Description}" Placeholder="Descripcion" Style="{StaticResource txtCar}"></Entry>
-        <Entry Text="{Binding CarModel.Price}" Placeholder="Precio" Style="{StaticResource txtCar}"></Entry>
-
-        <Button Text="Tomar Foto" Command="{Binding TakePhotoCommand}"></Button>
-        <Button Text="Aceptar" Command="{Binding AddCarCommand}"></Button>
-    </VerticalStackLayout>
+            <controls:CustomEntry Text="{Binding CarModel.Model}" Placeholder="Modelo"></controls:CustomEntry>
+            <mdc:TextField Text="{Binding CarModel.Brand}" LabelText="Brand" SupportingText=""></mdc:TextField>
+            <mdc:TextField Text="{Binding CarModel.Year}" LabelText="Year" SupportingText=""></mdc:TextField>
+            <mdc:TextField Text="{Binding CarModel.Description}" LabelText="Description" SupportingText=""></mdc:TextField>
+            <mdc:TextField Text="{Binding CarModel.Price}" LabelText="Price" SupportingText=""></mdc:TextField>
+            
+            
+            <mdc:Button IconKind="Camera" Style="{DynamicResource ElevatedButtonStyle}" Text="Tomar Foto" Command="{Binding TakePhotoCommand}"></mdc:Button>
+            <mdc:Button IconKind="Save" Style="{DynamicResource FilledTonalButtonStyle}" Text="Guardar" Command="{Binding AddCarCommand}"></mdc:Button>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

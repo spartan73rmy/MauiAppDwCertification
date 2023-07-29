@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppDWCert.Views.CarsForSale"
              xmlns:Model="clr-namespace:AppDWCert.Models"
+             xmlns:mdc="clr-namespace:Material.Components.Maui;assembly=Material.Components.Maui"
              x:Name="CarsForSalePage"
              Title="Carros en Venta">
     
@@ -35,11 +36,12 @@
                                 <Label Text="{Binding Price}"></Label>
                             </VerticalStackLayout>
 
-                            <Button x:Name="btnFavorite" Text="Favorito" Grid.Column="2" 
+                            <mdc:Button x:Name="btnFavorite" Grid.Column="2" 
+                                    IconKind="Favorite"
                                     Command="{Binding Source={x:Reference CarsForSalePage}, Path=BindingContext.SetFavoriteCommand}" 
                                     CommandParameter="{x:Reference btnFavorite}" >
 
-                            </Button>
+                            </mdc:Button>
 
                         </Grid>
                     </Border>
