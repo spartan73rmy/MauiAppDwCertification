@@ -2,6 +2,7 @@
 using AppDWCert.Messages;
 using AppDWCert.Models;
 using AppDWCert.ViewModels.Base;
+using CommunityToolkit.Maui.Alerts;
 using CommunityToolkit.Mvvm.Messaging;
 using System.Windows.Input;
 
@@ -9,6 +10,15 @@ namespace AppDWCert.ViewModels
 {
     public class AddCarViewModel : BaseViewModel
     {
+        private bool isValidModel;
+
+        public bool IsValidModel
+        {
+            get => isValidModel;
+            set => SetProperty(ref isValidModel, value);
+        }
+
+
         public Car CarModel { get; set; }
         public AddCarViewModel(INavigation navigation) : base(navigation)
         {
@@ -29,6 +39,12 @@ namespace AppDWCert.ViewModels
 
         private async Task AddCarAsync()
         {
+            if (!IsValidModel)
+            {
+                await Application.Current.MainPage.DisplaySnackbar("Necesitas llenar los campos");
+                return;
+            }
+
             var location = await Geolocation.Default.GetLocationAsync();
             await Navigation.PopAsync();
 
